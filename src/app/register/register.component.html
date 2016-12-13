@@ -1,0 +1,39 @@
+<div class="card-container">
+<md-card>
+    <md-toolbar color="primary">
+        <h2>Register</h2>
+    </md-toolbar>
+    <md-card-content>
+        <form name="form" class="register-form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+            <div [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                <md-input placeholder="First Name" type="text" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" required></md-input>
+                <div *ngIf="f.submitted && !firstName.valid">First Name is required</div>
+            </div>
+            <div [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                <md-input placeholder="Last Name" type="text" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" required>
+                </md-input>
+                <div *ngIf="f.submitted && !lastName.valid">Last Name is required</div>
+            </div>
+            <div [ngClass]="{ 'has-error': f.submitted && !email.valid }">
+                <md-input placeholder="Email" type="email" name="email" [(ngModel)]="model.email" #email="ngModel" required>
+                </md-input>
+                <div *ngIf="f.submitted && !email.valid">Email is required</div>
+            </div>
+            <div [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                <md-input placeholder="Username" type="text" name="username" [(ngModel)]="model.username" #username="ngModel" required>
+                </md-input>
+                <div *ngIf="f.submitted && !username.valid">Username is required</div>
+            </div>
+            <div [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+                <md-input placeholder="Password" type="password" name="password" [(ngModel)]="model.password" #password="ngModel" required>
+                </md-input>
+                <div *ngIf="f.submitted && !password.valid">Password is required</div>
+            </div>
+            <div class="button-container">
+                <button md-raised-button color="primary">Register</button>
+                <button md-raised-button md-anchor color="primary" [routerLink]="['/login']">Cancel</button>
+            </div>
+        </form>
+    </md-card-content>
+</md-card>
+</div>

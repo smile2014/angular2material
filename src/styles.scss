@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/core/theming/all-theme';
+@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+
+@include md-core();
+
+$primary: md-palette($md-cyan);
+$accent: md-palette($md-amber);
+
+$theme: md-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);
+
+.dark-theme {
+  $dark-p: md-palette($md-pink, 700);
+  $dark-a: md-palette($md-blue-grey);
+
+  $dark-t: md-dark-theme($dark-p, $dark-a);
+
+  @include angular-material-theme($dark-t);
+}
+
+//fonts
+$font_0: Roboto;
+$font_1: sans-serif;
+
+body {
+	margin: 0;
+	font-family: $font_0, $font_1;
+}
+md-toolbar-row {
+	justify-content: space-between;
+}
+p {
+	margin: 16px;
+}
+[md-raised-button] {
+	width: 100%;
+}
+md-grid-list {
+	max-width: 1403px;
+	margin: 16px;
+}
+md-sidenav-layout {
+	height: 100vh;
+}
+md-sidenav {
+	width: 320px;
+}
+.icon-20 {
+	font-size: 20px;
+}
+* {
+}

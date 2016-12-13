@@ -1,0 +1,41 @@
+.card-container{
+    clear: left; 
+    float: left; 
+    position: relative; 
+    left: 50%;
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 20px;
+    md-card{
+        width:400px;
+        height: 500px;
+        display: block; 
+        float: left; 
+        position: relative; 
+        right: 50%;
+            md-input{
+                width: 100%;
+            }
+            .button-container{
+                margin-top: 50px;
+                float: right;
+                button{
+                    margin:5px;
+                    width:10px;
+                }
+            }
+            .login-form{
+                margin: 100px 50px;
+            }
+            a{
+                cursor: pointer;
+            }
+    }
+}
+    
+    
+
+
+
+
+
