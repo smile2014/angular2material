@@ -9,29 +9,29 @@ import { AppComponent } from './app.component';
 import { routing } from "./app.routing";
 import { LoginComponent } from "./login";
 import { RegisterComponent } from "./register";
-import { HomeComponent } from "./home";
 import { ProfileComponent } from "./profile";
 import { ForgotpwdComponent } from "./forgotpwd";
 import { fakeBackendProvider, AuthGuard, GlobalEventsManager } from './helper';
 import { AuthenticationService, UserService, AlertService, ItemService, SidemenuService } from "./service";
-import { CartComponent } from './cart';
 import { ChangepwdComponent } from './changepwd';
 import { AlertComponent } from './alert';
 import { SettingComponent } from './setting';
+import { DashboardComponent } from './dashboard';
+import { AdmissionComponent } from './admission/admission.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlertComponent,
     LoginComponent,
-    HomeComponent,
     RegisterComponent,
     ProfileComponent,
     ForgotpwdComponent,
-    CartComponent,
     ChangepwdComponent,
     AlertComponent,
     SettingComponent,
+    DashboardComponent,
+    AdmissionComponent,
   ],
   entryComponents: [
     AppComponent,
