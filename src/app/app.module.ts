@@ -17,7 +17,15 @@ import { ChangepwdComponent } from './changepwd';
 import { AlertComponent } from './alert';
 import { SettingComponent } from './setting';
 import { DashboardComponent } from './dashboard';
-import { AdmissionComponent } from './admission/admission.component';
+import { AdmissionComponent } from './admission';
+import { StudentComponent } from './student';
+import { AttendanceComponent } from './attendance';
+import { TimetableComponent } from './timetable';
+import { ExaminationComponent } from './examination';
+import { FinanceComponent } from './finance';
+import { HrComponent } from './hr';
+import { UtilityComponent } from './utility';
+import { ReportComponent } from './report';
 
 @NgModule({
   declarations: [
@@ -32,6 +40,14 @@ import { AdmissionComponent } from './admission/admission.component';
     SettingComponent,
     DashboardComponent,
     AdmissionComponent,
+    StudentComponent,
+    AttendanceComponent,
+    TimetableComponent,
+    ExaminationComponent,
+    FinanceComponent,
+    HrComponent,
+    UtilityComponent,
+    ReportComponent,
   ],
   entryComponents: [
     AppComponent,

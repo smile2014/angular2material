@@ -7,13 +7,15 @@ import { AuthGuard } from './helper';
 import { ForgotpwdComponent } from './forgotpwd';
 import { ChangepwdComponent } from './changepwd';
 import { DashboardComponent } from './dashboard';
+import { AdmissionComponent } from './admission';
 
 const appRoutes: Routes = [
-    { path: '', component: DashboardComponent ,canActivate: [AuthGuard]},
+    { path: '', component: DashboardComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'forgotpwd', component: ForgotpwdComponent },
-     { path: 'profile/:id', component: ProfileComponent, canActivate: [AuthGuard] },
+    { path: 'profile/:id', component: ProfileComponent, canActivate: [AuthGuard] },
+    { path: 'admission', component: AdmissionComponent, canActivate: [AuthGuard] },
     { path: 'changepwd', component: ChangepwdComponent, canActivate: [AuthGuard] },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
