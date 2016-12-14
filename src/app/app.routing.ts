@@ -10,7 +10,7 @@ import { CartComponent } from './cart';
 import { ChangepwdComponent } from './changepwd';
 
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent },
+    { path: '', component: HomeComponent ,canActivate: [AuthGuard]},
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'forgotpwd', component: ForgotpwdComponent },

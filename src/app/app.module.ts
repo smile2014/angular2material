@@ -12,13 +12,12 @@ import { RegisterComponent } from "./register";
 import { HomeComponent } from "./home";
 import { ProfileComponent } from "./profile";
 import { ForgotpwdComponent } from "./forgotpwd";
-import { fakeBackendProvider, AuthGuard, GlobalEventsManager, ApplicationDatabase } from './helper';
-import { AuthenticationService, UserService, AlertService, ItemService } from "./service";
+import { fakeBackendProvider, AuthGuard, GlobalEventsManager } from './helper';
+import { AuthenticationService, UserService, AlertService, ItemService, SidemenuService } from "./service";
 import { CartComponent } from './cart';
 import { ChangepwdComponent } from './changepwd';
 import { AlertComponent } from './alert';
 import { SettingComponent } from './setting';
-import { ItemComponent } from './item';
 
 @NgModule({
   declarations: [
@@ -33,7 +32,6 @@ import { ItemComponent } from './item';
     ChangepwdComponent,
     AlertComponent,
     SettingComponent,
-    ItemComponent
   ],
   entryComponents: [
     AppComponent,
@@ -50,7 +48,7 @@ import { ItemComponent } from './item';
   ],
   providers: [
     GlobalEventsManager,
-    ApplicationDatabase,
+    SidemenuService,
     AuthGuard,
     UserService,
     AlertService,

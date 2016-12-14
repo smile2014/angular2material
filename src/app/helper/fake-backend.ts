@@ -1,14 +1,15 @@
 import { Http, BaseRequestOptions, Response, ResponseOptions, RequestMethod } from '@angular/http';
 import { MockBackend, MockConnection } from '@angular/http/testing';
-import { ApplicationDatabase } from "./data";
+import { ProductData,SidenavData,UserData } from "./data";
 
 export let fakeBackendProvider = {
     // use fake backend in place of Http service for backend-less development
     provide: Http,
-    useFactory: (backend: MockBackend, options: BaseRequestOptions, fakeDb: ApplicationDatabase) => {
+    useFactory: (backend: MockBackend, options: BaseRequestOptions) => {
         // array in local storage for registered users
         //let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
-        let users: any[] = fakeDb.UserData;
+        let users: any[] = UserData;
+        let sidemenu: any[] = SidenavData;
         //let items: any = JSON.parse(this.http.get('/model/product.json')) || [];
 
         // configure fake backend
@@ -124,11 +125,22 @@ export let fakeBackendProvider = {
                     }
                 }
 
+                // get sidemenu
+                if (connection.request.url.endsWith('/api/sidemenu') && connection.request.method === RequestMethod.Get) {
+                    // check for fake auth token in header and return sidemenu if valid, this security is implemented server side in a real application
+                    if (connection.request.headers.get('Authorization') === 'Bearer fake-jwt-token') {
+                        connection.mockRespond(new Response(new ResponseOptions({ status: 200, body: sidemenu })));
+                    } else {
+                        // return 401 not authorised if token is null or invalid
+                        connection.mockRespond(new Response(new ResponseOptions({ status: 401 })));
+                    }
+                }
+
             }, 500);
 
         });
 
         return new Http(backend, options);
     },
-    deps: [MockBackend, BaseRequestOptions, ApplicationDatabase]
+    deps: [MockBackend, BaseRequestOptions]
 };

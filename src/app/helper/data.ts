@@ -1,8 +1,5 @@
-import { Injectable } from "@angular/core";
 
-@Injectable()
-export class ApplicationDatabase {
-    public UserData = [
+    export const UserData = [
         {
             id: 1,
             username: "kpsingh",
@@ -41,7 +38,7 @@ export class ApplicationDatabase {
         }
     ];
 
-    public ProductData = [
+    export const ProductData = [
         {
             id: 1,
             name: "Blue Ice Sculpture",
@@ -73,4 +70,53 @@ export class ApplicationDatabase {
             }
         }
     ];
-}
+    export const SidenavData = [
+        {
+            id: 1,
+            name: "Dashboard",
+        },
+        {
+            id: 2,
+            name: "Admission",
+        },
+        {
+            id: 3,
+            name: "Student",
+        },
+        {
+            id: 4,
+            name: "Attendance",            
+        },
+        {
+            id: 5,
+            name: "Timetable",
+        },
+        {
+            id: 6,
+            name: "Examination",
+        },
+        {
+            id: 7,
+            name: "Finance",
+        },
+        {
+            id: 8,
+            name: "HR",
+        },
+        {
+            id: 9,
+            name: "Utilities",
+        },
+        {
+            id: 10,
+            name: "MDM",
+        },
+        {
+            id: 11,
+            name: "Reports",
+        },
+        {
+            id: 12,
+            name: "More",
+        },
+    ];
