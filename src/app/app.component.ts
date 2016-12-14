@@ -1,8 +1,7 @@
 import { Component, ViewChild, ViewContainerRef, OnInit } from '@angular/core';
 import { MdSidenav, MdDialog, MdDialogConfig } from "@angular/material";
 
-import { SettingComponent } from "./setting";
-import { LoginComponent } from "./login";
+//import { SettingComponent } from "./setting";
 import { GlobalEventsManager } from "./helper";
 import { User } from './model';
 import { SidemenuService } from './service';
@@ -21,8 +20,8 @@ export class AppComponent implements OnInit {
   sideMenuItems: any[];
 
   constructor(
-    public dialog: MdDialog,
-    public vcr: ViewContainerRef,
+    // public dialog: MdDialog,
+    // public vcr: ViewContainerRef,
     private globalEventsManager: GlobalEventsManager,
     private sidemenuService: SidemenuService) {
     this.globalEventsManager.isLoggedIn.subscribe((mode) => {
@@ -39,9 +38,9 @@ export class AppComponent implements OnInit {
     }
   }
 
-  openSettingDialog() {
-    const config = new MdDialogConfig();
-    config.viewContainerRef = this.vcr;
-    this.dialog.open(SettingComponent, config);
-  }
+  // openSettingDialog() {
+  //   const config = new MdDialogConfig();
+  //   config.viewContainerRef = this.vcr;
+  //   this.dialog.open(SettingComponent, config);
+  // }
 }

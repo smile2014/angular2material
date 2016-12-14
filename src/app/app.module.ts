@@ -15,7 +15,6 @@ import { fakeBackendProvider, AuthGuard, GlobalEventsManager } from './helper';
 import { AuthenticationService, UserService, AlertService, ItemService, SidemenuService } from "./service";
 import { ChangepwdComponent } from './changepwd';
 import { AlertComponent } from './alert';
-import { SettingComponent } from './setting';
 import { DashboardComponent } from './dashboard';
 import { AdmissionComponent } from './admission';
 import { StudentComponent } from './student';
@@ -37,7 +36,6 @@ import { ReportComponent } from './report';
     ForgotpwdComponent,
     ChangepwdComponent,
     AlertComponent,
-    SettingComponent,
     DashboardComponent,
     AdmissionComponent,
     StudentComponent,
@@ -52,8 +50,7 @@ import { ReportComponent } from './report';
   entryComponents: [
     AppComponent,
     LoginComponent,
-    AlertComponent,
-    SettingComponent
+    AlertComponent
   ],
   imports: [
     BrowserModule,

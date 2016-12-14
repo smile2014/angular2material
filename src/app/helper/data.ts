@@ -84,37 +84,37 @@ export const SidenavData = [
     {
         id: 3,
         name: "Student",
-        route: "/"
+        route: "/student"
     },
     {
         id: 4,
         name: "Attendance",
-        route: "/"
+        route: "/attendance"
     },
     {
         id: 5,
         name: "Timetable",
-        route: "/"
+        route: "/timetable"
     },
     {
         id: 6,
         name: "Examination",
-        route: "/"
+        route: "/examination"
     },
     {
         id: 7,
         name: "Finance",
-        route: "/"
+        route: "/finance"
     },
     {
         id: 8,
         name: "HR",
-        route: "/"
+        route: "/hr"
     },
     {
         id: 9,
         name: "Utilities",
-        route: "/"
+        route: "/utility"
     },
     // {
     //     id: 10,
@@ -124,7 +124,7 @@ export const SidenavData = [
     {
         id: 11,
         name: "Reports",
-        route: "/"
+        route: "/report"
     },
     // {
     //     id: 12,
