@@ -25,6 +25,10 @@ import { FinanceComponent } from './finance';
 import { HrComponent } from './hr';
 import { UtilityComponent } from './utility';
 import { ReportComponent } from './report';
+import { LinkComponent } from './link';
+import { FeeComponent } from './fee';
+import { LibraryComponent } from './library';
+import { ComplainComponent } from './complain';
 
 @NgModule({
   declarations: [
@@ -46,6 +50,10 @@ import { ReportComponent } from './report';
     HrComponent,
     UtilityComponent,
     ReportComponent,
+    LinkComponent,
+    FeeComponent,
+    LibraryComponent,
+    ComplainComponent,
   ],
   entryComponents: [
     AppComponent,

@@ -1,7 +1,6 @@
 import { Component, ViewChild, ViewContainerRef, OnInit } from '@angular/core';
 import { MdSidenav, MdDialog, MdDialogConfig } from "@angular/material";
 
-//import { SettingComponent } from "./setting";
 import { GlobalEventsManager } from "./helper";
 import { User } from './model';
 import { SidemenuService } from './service';

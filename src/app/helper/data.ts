@@ -7,7 +7,8 @@ export const UserData = [
         firstName: "Krishna",
         middlename: "Pratap",
         lastName: "Singh",
-        email: "kp@abc.com"
+        email: "kp@abc.com",
+        roleId: 1
     },
     {
         id: 2,
@@ -16,7 +17,8 @@ export const UserData = [
         firstName: "Krishna",
         middlename: "Pratap",
         lastName: "Singh",
-        email: "kp@def.com"
+        email: "kp@def.com",
+        roleId: 2
     },
     {
         id: 3,
@@ -25,7 +27,8 @@ export const UserData = [
         firstName: "Krishna",
         middlename: "Pratap",
         lastName: "Singh",
-        email: "kp@ghi.com"
+        email: "kp@ghi.com",
+        roleId: 3
     },
     {
         id: 4,
@@ -34,42 +37,11 @@ export const UserData = [
         firstName: "Krishna",
         middlename: "Pratap",
         lastName: "Singh",
-        email: "kp@jkl.com"
+        email: "kp@jkl.com",
+        roleId: 4
     }
 ];
 
-export const ProductData = [
-    {
-        id: 1,
-        name: "Blue Ice Sculpture",
-        imageName: "ice-cube.jpg",
-        tags: ["ice", "cold"],
-        dimensions: {
-            length: 7.6,
-            width: 5.0,
-            height: 2.0
-        },
-        warehouseLocation: {
-            latitude: -36.97,
-            longitude: 76.0
-        }
-    },
-    {
-        id: 2,
-        name: "Blue Mouse",
-        imageName: "blue-mouse.jpg",
-        tags: ["blue", "mouse"],
-        dimensions: {
-            length: 2.6,
-            width: 1.0,
-            height: 1.0
-        },
-        warehouseLocation: {
-            latitude: -46.97,
-            longitude: 51.0
-        }
-    }
-];
 export const SidenavData = [
     {
         id: 1,
@@ -116,19 +88,29 @@ export const SidenavData = [
         name: "Utilities",
         route: "/utility"
     },
-    // {
-    //     id: 10,
-    //     name: "MDM",
-    //     route: "/"
-    // },
     {
-        id: 11,
+        id: 10,
         name: "Reports",
         route: "/report"
     },
-    // {
-    //     id: 12,
-    //     name: "More",
-    //     route: "/"
-    // },
+    {
+        id: 11,
+        name: "Links",
+        route: "/link"
+    },
+    {
+        id: 12,
+        name: "Fee",
+        route: "/fee"
+    },
+    {
+        id: 13,
+        name: "Library",
+        route: "/library"
+    },
+    {
+        id: 14,
+        name: "Complaints",
+        route: "/complain"
+    },
 ];
