@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
+import { AuthenticationService } from "./authentication.service";
+
 @Injectable()
 export class SidemenuService {
 
-  constructor(private http: Http) { }
-getSidemenu() {
-        return this.http.get('/api/sidemenu', this.jwt()).map((response: Response) => response.json());
+    constructor(private http: Http, private authService: AuthenticationService) { }
+    getSidemenu() {
+        return this.http.get('/api/sidemenu', this.authService.jwt()).map((response: Response) => response.json());
     }
     // private helper methods
 

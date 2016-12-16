@@ -1,7 +1,7 @@
 import { Http, BaseRequestOptions, Response, ResponseOptions, RequestMethod } from '@angular/http';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { SidenavData, UserData } from "./data";
-import { User } from "../model";
+import { User, SideMenu } from "../model";
 
 export let fakeBackendProvider = {
     // use fake backend in place of Http service for backend-less development
@@ -10,7 +10,7 @@ export let fakeBackendProvider = {
         // array in local storage for registered users
         //let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
         let users: Array<User> = UserData;
-        let sidemenu: any[] = SidenavData;
+        let sidemenu: Array<SideMenu> = SidenavData;
         //let items: any = JSON.parse(this.http.get('/model/product.json')) || [];
 
         // configure fake backend

@@ -1,4 +1,4 @@
-import { User } from "../model";
+import { User, SideMenu } from "../model";
 
 export const UserData: Array<User> = [
     {
@@ -43,75 +43,103 @@ export const UserData: Array<User> = [
     }
 ];
 
-export const SidenavData = [
+export const SidenavData: Array<SideMenu> = [
     {
         id: 1,
         name: "Dashboard",
-        route: "/dashboard"
+        route: "/dashboard",
+        roleId: 1,
+        parentId: null
     },
     {
         id: 2,
         name: "Admission",
-        route: "/admission"
+        route: "/admission",
+        roleId: 1,
+        parentId: null
     },
     {
         id: 3,
         name: "Student",
-        route: "/student"
+        route: "/student",
+        roleId: 1,
+        parentId: null
     },
     {
         id: 4,
         name: "Attendance",
-        route: "/attendance"
+        route: "/attendance",
+        roleId: 1,
+        parentId: null
     },
     {
         id: 5,
         name: "Timetable",
-        route: "/timetable"
+        route: "/timetable",
+        roleId: 1,
+        parentId: null
     },
     {
         id: 6,
         name: "Examination",
-        route: "/examination"
+        route: "/examination",
+        roleId: 1,
+        parentId: null
     },
     {
         id: 7,
         name: "Finance",
-        route: "/finance"
+        route: "/finance",
+        roleId: 1,
+        parentId: null
     },
     {
         id: 8,
         name: "HR",
-        route: "/hr"
+        route: "/hr",
+        roleId: 1,
+        parentId: null
     },
     {
         id: 9,
         name: "Utilities",
-        route: "/utility"
+        route: "/utility",
+        roleId: 1,
+        parentId: null
     },
     {
         id: 10,
         name: "Reports",
-        route: "/report"
+        route: "/report",
+        roleId: 1,
+        parentId: null
     },
     {
         id: 11,
         name: "Links",
-        route: "/link"
+        route: "/link",
+        roleId: 1,
+        parentId: null
     },
     {
         id: 12,
         name: "Fee",
-        route: "/fee"
+        route: "/fee",
+        roleId: 1,
+        parentId: null
     },
     {
         id: 13,
         name: "Library",
-        route: "/library"
+        route: "/library",
+        roleId: 1,
+        parentId: null
     },
     {
         id: 14,
         name: "Complaints",
-        route: "/complain"
+        route: "/complain",
+        roleId: 1,
+        parentId: null
     },
 ];

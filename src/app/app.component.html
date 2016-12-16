@@ -11,11 +11,15 @@
   </md-toolbar>
   <md-sidenav-layout class="left-navigation">
     <md-sidenav #sidenav>
+      <!--<md-sidenav #sidenav mode="side" opened="true">-->
       <md-nav-list>
         <md-nav-list>
-          <a md-list-item *ngFor="let item of sideMenuItems">
-            <a [routerLink]="[item.route]">{{item.name}}</a>
-          </a>
+          <div *ngFor="let item of sideMenuItems">
+            <a md-list-item [routerLink]="[item.route]">
+              <md-icon role="img" class="md2 md-icon material-icons" aria-label="{{item.name}}">{{item.name==='Dashboard'?'home':''}}</md-icon>
+              <span>{{item.name}}</span>
+            </a>
+          </div>
           <a md-list-item (click)="isDarkTheme=!isDarkTheme">
             <span>Toggle theme</span>
           </a>
