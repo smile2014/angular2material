@@ -27,7 +27,7 @@
     </md-sidenav>
     <md-menu x-position="before" #menu>
       <button md-menu-item md-anchor *ngIf="!loggedIn" [routerLink]="['/login']">Login</button>
-      <button md-menu-item md-anchor *ngIf="loggedIn" [routerLink]="['/profile',loggedInUser.id]">Profile</button>
+      <button md-menu-item md-anchor *ngIf="loggedIn" [routerLink]="['/profile',1]">Profile</button>
       <button md-menu-item md-anchor *ngIf="loggedIn" [routerLink]="['/changepwd']">Change Password</button>
       <button md-menu-item md-anchor *ngIf="loggedIn" [routerLink]="['/login']">Logout</button>
     </md-menu>

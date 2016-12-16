@@ -1,6 +1,7 @@
 import { Http, BaseRequestOptions, Response, ResponseOptions, RequestMethod } from '@angular/http';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { SidenavData, UserData } from "./data";
+import { User } from "../model";
 
 export let fakeBackendProvider = {
     // use fake backend in place of Http service for backend-less development
@@ -8,7 +9,7 @@ export let fakeBackendProvider = {
     useFactory: (backend: MockBackend, options: BaseRequestOptions) => {
         // array in local storage for registered users
         //let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
-        let users: any[] = UserData;
+        let users: Array<User> = UserData;
         let sidemenu: any[] = SidenavData;
         //let items: any = JSON.parse(this.http.get('/model/product.json')) || [];
 
@@ -36,7 +37,10 @@ export let fakeBackendProvider = {
                                 id: user.id,
                                 username: user.username,
                                 firstName: user.firstName,
+                                middleName:user.middleName,
                                 lastName: user.lastName,
+                                roleId:user.roleId,
+                                email:user.email,
                                 token: 'fake-jwt-token'
                             }
                         })));

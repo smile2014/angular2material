@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
       this.loggedIn = mode;
     });
     this.sidemenuService.getSidemenu().subscribe(items => { this.sideMenuItems = items; });
+    console.log(this.sideMenuItems);
   }
 
   ngOnInit() {

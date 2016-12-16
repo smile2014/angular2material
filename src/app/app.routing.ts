@@ -35,12 +35,12 @@ const appRoutes: Routes = [
     { path: 'fee', component: FeeComponent, canActivate: [AuthGuard] },
     { path: 'library', component: LibraryComponent, canActivate: [AuthGuard] },
     { path: 'complain', component: ComplainComponent, canActivate: [AuthGuard] },
-    { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent },
-    { path: 'forgotpwd', component: ForgotpwdComponent },
     { path: 'profile/:id', component: ProfileComponent, canActivate: [AuthGuard] },
     { path: 'admission', component: AdmissionComponent, canActivate: [AuthGuard] },
     { path: 'changepwd', component: ChangepwdComponent, canActivate: [AuthGuard] },
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
+    { path: 'forgotpwd', component: ForgotpwdComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];

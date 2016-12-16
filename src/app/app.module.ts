@@ -12,7 +12,7 @@ import { RegisterComponent } from "./register";
 import { ProfileComponent } from "./profile";
 import { ForgotpwdComponent } from "./forgotpwd";
 import { fakeBackendProvider, AuthGuard, GlobalEventsManager } from './helper';
-import { AuthenticationService, UserService, AlertService, ItemService, SidemenuService } from "./service";
+import { AuthenticationService, UserService, AlertService, SidemenuService } from "./service";
 import { ChangepwdComponent } from './changepwd';
 import { AlertComponent } from './alert';
 import { DashboardComponent } from './dashboard';
@@ -73,7 +73,6 @@ import { ComplainComponent } from './complain';
     AuthGuard,
     UserService,
     AlertService,
-    ItemService,
     AuthenticationService,
     fakeBackendProvider,
     MockBackend,

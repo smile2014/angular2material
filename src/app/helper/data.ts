@@ -1,11 +1,12 @@
+import { User } from "../model";
 
-export const UserData = [
+export const UserData: Array<User> = [
     {
         id: 1,
         username: "kpsingh",
         password: "abc",
         firstName: "Krishna",
-        middlename: "Pratap",
+        middleName: "Pratap",
         lastName: "Singh",
         email: "kp@abc.com",
         roleId: 1
@@ -15,7 +16,7 @@ export const UserData = [
         username: "kpsingh1",
         password: "abc1",
         firstName: "Krishna",
-        middlename: "Pratap",
+        middleName: "Pratap",
         lastName: "Singh",
         email: "kp@def.com",
         roleId: 2
@@ -25,7 +26,7 @@ export const UserData = [
         username: "kpsingh2",
         password: "abc2",
         firstName: "Krishna",
-        middlename: "Pratap",
+        middleName: "Pratap",
         lastName: "Singh",
         email: "kp@ghi.com",
         roleId: 3
@@ -35,7 +36,7 @@ export const UserData = [
         username: "kpsingh3",
         password: "abc3",
         firstName: "Krishna",
-        middlename: "Pratap",
+        middleName: "Pratap",
         lastName: "Singh",
         email: "kp@jkl.com",
         roleId: 4
