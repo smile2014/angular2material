@@ -1,5 +1,43 @@
 import { User, SideMenu } from "../model";
 
+const SubsidenavData: Array<SideMenu> = [
+    {
+        id: 1,
+        name: "Enrollment",
+        route: "/dashboard",
+        roleId: 1,
+        isSubmenu: false,
+        parentId: 2,
+    },
+    {
+        id: 2,
+        name: "Import",
+        route: "/dashboard",
+        roleId: 1,
+        isSubmenu: false,
+        parentId: 2,
+        image: "file_upload"
+    },
+    {
+        id: 3,
+        name: "Selection",
+        route: "/dashboard",
+        roleId: 1,
+        isSubmenu: false,
+        parentId: 2,
+        image: "thumb_up"
+    },
+    {
+        id: 4,
+        name: "Rejection",
+        route: "/dashboard",
+        roleId: 1,
+        isSubmenu: false,
+        parentId: 2,
+        image: "thumb_down"
+    }
+];
+
 export const UserData: Array<User> = [
     {
         id: 1,
@@ -49,27 +87,35 @@ export const SidenavData: Array<SideMenu> = [
         name: "Dashboard",
         route: "/dashboard",
         roleId: 1,
-        parentId: null
+        parentId: null,
+        isSubmenu: false,
+        image: 'dashboard'
     },
     {
         id: 2,
         name: "Admission",
         route: "/admission",
         roleId: 1,
-        parentId: null
+        parentId: null,
+        isSubmenu: true,
+        subMenu: SubsidenavData,
+        image: "assignment"
     },
     {
         id: 3,
         name: "Student",
         route: "/student",
         roleId: 1,
-        parentId: null
+        isSubmenu: false,
+        parentId: null,
+        image: "person"
     },
     {
         id: 4,
         name: "Attendance",
         route: "/attendance",
         roleId: 1,
+        isSubmenu: false,
         parentId: null
     },
     {
@@ -77,13 +123,16 @@ export const SidenavData: Array<SideMenu> = [
         name: "Timetable",
         route: "/timetable",
         roleId: 1,
-        parentId: null
+        isSubmenu: false,
+        parentId: null,
+        image: "date_range"
     },
     {
         id: 6,
         name: "Examination",
         route: "/examination",
         roleId: 1,
+        isSubmenu: false,
         parentId: null
     },
     {
@@ -91,6 +140,7 @@ export const SidenavData: Array<SideMenu> = [
         name: "Finance",
         route: "/finance",
         roleId: 1,
+        isSubmenu: false,
         parentId: null
     },
     {
@@ -98,34 +148,43 @@ export const SidenavData: Array<SideMenu> = [
         name: "HR",
         route: "/hr",
         roleId: 1,
-        parentId: null
+        isSubmenu: false,
+        parentId: null,
+        image: "people"
     },
     {
         id: 9,
         name: "Utilities",
         route: "/utility",
         roleId: 1,
-        parentId: null
+        isSubmenu: false,
+        parentId: null,
+        image: "settings_applications"
     },
     {
         id: 10,
         name: "Reports",
         route: "/report",
         roleId: 1,
-        parentId: null
+        isSubmenu: false,
+        parentId: null,
+        image: "receipt"
     },
     {
         id: 11,
         name: "Links",
         route: "/link",
         roleId: 1,
-        parentId: null
+        isSubmenu: false,
+        parentId: null,
+        image: "link"
     },
     {
         id: 12,
         name: "Fee",
         route: "/fee",
         roleId: 1,
+        isSubmenu: false,
         parentId: null
     },
     {
@@ -133,13 +192,17 @@ export const SidenavData: Array<SideMenu> = [
         name: "Library",
         route: "/library",
         roleId: 1,
-        parentId: null
+        isSubmenu: false,
+        parentId: null,
+        image: "library_books"
     },
     {
         id: 14,
         name: "Complaints",
         route: "/complain",
         roleId: 1,
-        parentId: null
+        isSubmenu: false,
+        parentId: null,
+        image: "report_problem"
     },
 ];

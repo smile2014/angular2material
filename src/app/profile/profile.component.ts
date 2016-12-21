@@ -14,19 +14,21 @@ import { User } from '../model';
 })
 export class ProfileComponent implements OnInit {
     user: User;
-    user1: Observable<User>;
+    id: number;
+    //user1: User;
     constructor(private userService: UserService,
         private route: ActivatedRoute,
         private router: Router) {
-        if (localStorage.getItem('currentUser')) {
-            // logged in so return true
-            this.user = JSON.parse(localStorage.getItem('currentUser'));
-            let id = +this.route.snapshot.params['id'];
-            //this.userService.getById(id).subscribe(usr => this.user1 = usr);
-            // this.userService.getById(id).subscribe(usr => {
-            //     this.user1 = JSON.stringify(usr);
-            // });
-        }
+        //let id = +this.route.params['id'];
+        //this.userService.getById(this.id).subscribe(usr => this.user = usr);
+        // if (localStorage.getItem('currentUser')) {
+        //     // logged in so return true
+        //     this.user = JSON.parse(localStorage.getItem('currentUser'));
+        //     this.userService.getById(id).subscribe(usr => this.user1 = usr);
+        //     this.userService.getById(id).subscribe(usr => {
+        //         this.user1 = JSON.stringify(usr);
+        //     });
+        // }
         // // (+) converts string 'id' to a number
         // let id = this.route.snapshot.params['id'];
 
@@ -38,11 +40,10 @@ export class ProfileComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.user1 = this.route.params
-            .switchMap((params: Params) => {
-                let id = +params['id'];
-                return this.userService.getById(params['id']);
-            });
-            console.log(this.user1);
+        this.route.params.subscribe(params => {
+            this.id = +params['id']; // (+) converts string 'id' to a number
+            this.userService.getById(this.id).subscribe(usr => this.user = usr);
+            // In a real app: dispatch action to load the details here.
+        });
     }
 }

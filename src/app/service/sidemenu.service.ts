@@ -2,13 +2,27 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 import { AuthenticationService } from "./authentication.service";
+import { GlobalEventsManager } from "../helper";
+import { User } from '../model';
 
 @Injectable()
 export class SidemenuService {
+    loggedInUser: User;
+    constructor(
+        private http: Http,
+        private authService: AuthenticationService,
+        private globalEventsManager: GlobalEventsManager) {
+    }
 
-    constructor(private http: Http, private authService: AuthenticationService) { }
     getSidemenu() {
+        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        //return this.http.get('/api/sidemenu/' + currentUser.roleId, this.authService.jwt()).map((response: Response) => response.json());
         return this.http.get('/api/sidemenu', this.authService.jwt()).map((response: Response) => response.json());
+    }
+
+    getSidemenuByRole() {
+        let currentUser: User = JSON.parse(localStorage.getItem('currentUser'));
+        return this.http.get('/api/sidemenu/' + currentUser.roleId, this.authService.jwt()).map((response: Response) => response.json());
     }
     // private helper methods
 

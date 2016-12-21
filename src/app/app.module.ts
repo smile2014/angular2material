@@ -29,6 +29,7 @@ import { LinkComponent } from './link';
 import { FeeComponent } from './fee';
 import { LibraryComponent } from './library';
 import { ComplainComponent } from './complain';
+import { SidemenuComponent } from './sidemenu/sidemenu.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { ComplainComponent } from './complain';
     FeeComponent,
     LibraryComponent,
     ComplainComponent,
+    SidemenuComponent,
   ],
   entryComponents: [
     AppComponent,

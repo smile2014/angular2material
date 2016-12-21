@@ -4,5 +4,8 @@ export class SideMenu {
     route: string;
     roleId: number;
     parentId?: number;
-    subMenu?: Array<SideMenu>
+    subMenu?: Array<SideMenu>;
+    isSubmenu:boolean;
+    image?: string;
+    imageUrl?:string;
 }

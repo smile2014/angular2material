@@ -1,20 +1,8 @@
-<div class="card-container">
+<div *ngIf="user" class="card-container">
     <md-card>
         <md-card-title>{{user.firstName}}</md-card-title>
         <md-card-content class="secondary">
             {{user.username}} ({{user.firstName}} {{user.lastName}})
-        </md-card-content>
-        <md-card-actions align="end">
-            <button md-button color="primary">LIKE</button>
-            <button md-button color="primary">COMMENT</button>
-        </md-card-actions>
-    </md-card>
-</div>
-<div *ngIf="user1" class="card-container">
-    <md-card>
-        <md-card-title>{{user1.firstName}}</md-card-title>
-        <md-card-content class="secondary">
-            {{user1.username}} ({{user1.firstName}} {{user1.lastName}})
         </md-card-content>
         <md-card-actions align="end">
             <button md-button color="primary">LIKE</button>

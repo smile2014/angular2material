@@ -16,8 +16,7 @@ export class LoginComponent implements OnInit {
     constructor(
         private router: Router,
         private authenticationService: AuthenticationService,
-        private alertService: AlertService,
-        private globalEventsManager: GlobalEventsManager) { }
+        private alertService: AlertService) { }
 
     ngOnInit() {
         // reset login status
@@ -29,7 +28,6 @@ export class LoginComponent implements OnInit {
         this.authenticationService.login(this.model.username, this.model.password)
             .subscribe(
             data => {
-                //this.globalEventsManager.isLoggedIn.emit(true);
                 this.router.navigate(['/']);
             },
             error => {

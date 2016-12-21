@@ -37,10 +37,10 @@ export let fakeBackendProvider = {
                                 id: user.id,
                                 username: user.username,
                                 firstName: user.firstName,
-                                middleName:user.middleName,
+                                middleName: user.middleName,
                                 lastName: user.lastName,
-                                roleId:user.roleId,
-                                email:user.email,
+                                roleId: user.roleId,
+                                email: user.email,
                                 token: 'fake-jwt-token'
                             }
                         })));
@@ -129,6 +129,26 @@ export let fakeBackendProvider = {
                     }
                 }
 
+                // get sidemenu by roleid
+                if (connection.request.url.match(/\/api\/sidemenu\/\d+$/) && connection.request.method === RequestMethod.Get) {
+                    // check for fake auth token in header and return sidemenu if valid, this security is implemented server side in a real application
+                    if (connection.request.headers.get('Authorization') === 'Bearer fake-jwt-token') {
+                        // find user by id in users array
+                        let urlParts = connection.request.url.split('/');
+                        console.log(urlParts);
+                        let roleId = parseInt(urlParts[urlParts.length - 1]);
+                        console.log(roleId);
+                        let matchedMenu = sidemenu.filter(menu => { return menu.roleId === roleId; });
+                        console.log(matchedMenu);
+                        let menu = matchedMenu.length ? matchedMenu : null;
+                        console.log(menu);
+                        connection.mockRespond(new Response(new ResponseOptions({ status: 200, body: menu })));
+                    } else {
+                        // return 401 not authorised if token is null or invalid
+                        connection.mockRespond(new Response(new ResponseOptions({ status: 401 })));
+                    }
+                }
+
                 // get sidemenu
                 if (connection.request.url.endsWith('/api/sidemenu') && connection.request.method === RequestMethod.Get) {
                     // check for fake auth token in header and return sidemenu if valid, this security is implemented server side in a real application
@@ -141,6 +161,8 @@ export let fakeBackendProvider = {
                 }
 
             }, 500);
+
+
 
         });
 

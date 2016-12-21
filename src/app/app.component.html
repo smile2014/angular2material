@@ -13,25 +13,18 @@
     <md-sidenav #sidenav>
       <!--<md-sidenav #sidenav mode="side" opened="true">-->
       <md-nav-list>
-        <md-nav-list>
-          <div *ngFor="let item of sideMenuItems">
-            <a md-list-item [routerLink]="[item.route]">
-              <md-icon role="img" class="md2 md-icon material-icons" aria-label="{{item.name}}">{{item.name==='Dashboard'?'home':''}}</md-icon>
-              <span>{{item.name}}</span>
-            </a>
-          </div>
-          <a md-list-item (click)="isDarkTheme=!isDarkTheme">
-            <span>Toggle theme</span>
-          </a>
-          <!--<a md-list-item (click)="openSettingDialog()">
+        <app-sidemenu></app-sidemenu>
+        <a md-list-item (click)="isDarkTheme=!isDarkTheme">
+          <span>Toggle theme</span>
+        </a>
+        <!--<a md-list-item (click)="openSettingDialog()">
             <span>Settings</span>
           </a>-->
-        </md-nav-list>
       </md-nav-list>
     </md-sidenav>
     <md-menu x-position="before" #menu>
       <button md-menu-item md-anchor *ngIf="!loggedIn" [routerLink]="['/login']">Login</button>
-      <button md-menu-item md-anchor *ngIf="loggedIn" [routerLink]="['/profile',1]">Profile</button>
+      <button md-menu-item md-anchor *ngIf="loggedIn" [routerLink]="['/profile',loggedInUser.id]">Profile</button>
       <button md-menu-item md-anchor *ngIf="loggedIn" [routerLink]="['/changepwd']">Change Password</button>
       <button md-menu-item md-anchor *ngIf="loggedIn" [routerLink]="['/login']">Logout</button>
     </md-menu>

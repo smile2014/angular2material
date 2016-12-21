@@ -1,8 +1,9 @@
 import { Component, ViewChild, ViewContainerRef, OnInit } from '@angular/core';
 import { MdSidenav, MdDialog, MdDialogConfig } from "@angular/material";
+import { Router } from '@angular/router';
 
 import { GlobalEventsManager } from "./helper";
-import { User } from './model';
+import { User, SideMenu } from './model';
 import { SidemenuService } from './service';
 
 
@@ -12,28 +13,33 @@ import { SidemenuService } from './service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  @ViewChild('sidenav') sidenav: MdSidenav;
   isDarkTheme: boolean = false;
   loggedIn: boolean = false;
-  loggedInUser: any;
-  sideMenuItems: any[];
+  loggedInUser: User;
 
   constructor(
     // public dialog: MdDialog,
     // public vcr: ViewContainerRef,
     private globalEventsManager: GlobalEventsManager,
-    private sidemenuService: SidemenuService) {
+    private router: Router) {
     this.globalEventsManager.isLoggedIn.subscribe((mode) => {
       this.loggedIn = mode;
     });
-    this.sidemenuService.getSidemenu().subscribe(items => { this.sideMenuItems = items; });
+    this.globalEventsManager.loggedInUser.subscribe((user) => {
+      this.loggedInUser = user;
+    });
   }
 
   ngOnInit() {
-    if (localStorage.getItem('currentUser')) {
+    if (!(this.loggedIn && this.loggedInUser)) {
+      if (localStorage.getItem('currentUser')) {
+        let usr: User = JSON.parse(localStorage.getItem('currentUser'));
+        this.globalEventsManager.isLoggedIn.emit(true);
+        this.globalEventsManager.loggedInUser.emit(usr);
+      }
       // logged in so return true
-      this.loggedIn = true;
-      this.loggedInUser = JSON.parse(localStorage.getItem('currentUser'));
+      // this.loggedIn = true;
+      // this.loggedInUser = JSON.parse(localStorage.getItem('currentUser'));
     }
   }
 
