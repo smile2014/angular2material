@@ -13,7 +13,7 @@
         <button md-button md-anchor *ngIf="!loggedIn" [routerLink]="['/login']">Sign in</button>
         <button md-icon-button [md-menu-trigger-for]="menu" *ngIf="loggedIn">
           <!--<md-icon>account_circle</md-icon>-->
-          <i fa [name]="rocket" [border]=true></i>
+          <fa [name]="'rocket'" [inverse]=true></fa>
         </button>
         <button md-icon-button (click)="logout()" *ngIf="loggedIn">
           <md-icon>input</md-icon>
