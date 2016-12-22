@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, BaseRequestOptions } from '@angular/http';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { MaterialModule } from '@angular/material';
+import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
 
 import { AppComponent } from './app.component';
 import { routing } from "./app.routing";
@@ -77,6 +78,7 @@ import { RejectionComponent } from './rejection';
     FormsModule,
     HttpModule,
     routing,
+    Angular2FontawesomeModule,
     MaterialModule.forRoot()
   ],
   providers: [

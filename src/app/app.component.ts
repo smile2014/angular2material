@@ -1,5 +1,6 @@
 import { Component, ViewChild, ViewContainerRef, OnInit } from '@angular/core';
 import { MdSidenav, MdDialog, MdDialogConfig } from "@angular/material";
+import { FaDirective } from 'angular2-fontawesome/src/fa.directive';
 import { Router } from '@angular/router';
 
 import { GlobalEventsManager } from "./helper";

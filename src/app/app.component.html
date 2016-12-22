@@ -5,12 +5,18 @@
         <button md-icon-button (click)="sidenav.toggle()" *ngIf="loggedIn">
           <md-icon>menu</md-icon>
         </button>
+      </div>
+      <div>
         <span>School Management</span>
       </div>
       <div class="right">
         <button md-button md-anchor *ngIf="!loggedIn" [routerLink]="['/login']">Sign in</button>
         <button md-icon-button [md-menu-trigger-for]="menu" *ngIf="loggedIn">
-          <md-icon>account_circle</md-icon>
+          <!--<md-icon>account_circle</md-icon>-->
+          <i fa [name]="rocket" [border]=true></i>
+        </button>
+        <button md-icon-button (click)="logout()" *ngIf="loggedIn">
+          <md-icon>input</md-icon>
         </button>
       </div>
     </div>
@@ -32,7 +38,6 @@
       <div *ngIf="loggedIn">
         <button md-menu-item md-anchor [routerLink]="['/profile',loggedInUser.id]">Profile</button>
         <button md-menu-item md-anchor [routerLink]="['/changepwd']">Change Password</button>
-        <button md-menu-item (click)="logout()">Logout</button>
       </div>
     </md-menu>
     <alert></alert>
