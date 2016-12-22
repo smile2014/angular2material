@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 import { GlobalEventsManager } from "./helper";
 import { User, SideMenu } from './model';
-import { SidemenuService } from './service';
+import { SidemenuService, AuthenticationService } from './service';
 
 
 @Component({
@@ -21,7 +21,8 @@ export class AppComponent implements OnInit {
     // public dialog: MdDialog,
     // public vcr: ViewContainerRef,
     private globalEventsManager: GlobalEventsManager,
-    private router: Router) {
+    private router: Router,
+    private authenticationService: AuthenticationService, ) {
     this.globalEventsManager.isLoggedIn.subscribe((mode) => {
       this.loggedIn = mode;
     });
@@ -41,6 +42,11 @@ export class AppComponent implements OnInit {
       // this.loggedIn = true;
       // this.loggedInUser = JSON.parse(localStorage.getItem('currentUser'));
     }
+  }
+
+  logout() {
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
   }
 
   // openSettingDialog() {

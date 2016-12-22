@@ -1,19 +1,25 @@
 <div [class.dark-theme]="isDarkTheme">
   <md-toolbar color="primary">
-    <button md-icon-button (click)="sidenav.toggle()">
-      <md-icon>menu</md-icon>
-    </button>
-    <span>School Management</span>
-    <button md-button color="primary" if>Sign in</button>
-    <button md-icon-button [md-menu-trigger-for]="menu">
-      <md-icon>account_circle</md-icon>
-    </button>
+    <div class="toolbar-container">
+      <div class="left">
+        <button md-icon-button (click)="sidenav.toggle()" *ngIf="loggedIn">
+          <md-icon>menu</md-icon>
+        </button>
+        <span>School Management</span>
+      </div>
+      <div class="right">
+        <button md-button md-anchor *ngIf="!loggedIn" [routerLink]="['/login']">Sign in</button>
+        <button md-icon-button [md-menu-trigger-for]="menu" *ngIf="loggedIn">
+          <md-icon>account_circle</md-icon>
+        </button>
+      </div>
+    </div>
   </md-toolbar>
   <md-sidenav-layout class="left-navigation">
     <md-sidenav #sidenav>
       <!--<md-sidenav #sidenav mode="side" opened="true">-->
       <md-nav-list>
-        <app-sidemenu></app-sidemenu>
+        <app-sidemenu *ngIf="loggedIn"></app-sidemenu>
         <a md-list-item (click)="isDarkTheme=!isDarkTheme">
           <span>Toggle theme</span>
         </a>
@@ -23,10 +29,11 @@
       </md-nav-list>
     </md-sidenav>
     <md-menu x-position="before" #menu>
-      <button md-menu-item md-anchor *ngIf="!loggedIn" [routerLink]="['/login']">Login</button>
-      <button md-menu-item md-anchor *ngIf="loggedIn" [routerLink]="['/profile',loggedInUser.id]">Profile</button>
-      <button md-menu-item md-anchor *ngIf="loggedIn" [routerLink]="['/changepwd']">Change Password</button>
-      <button md-menu-item md-anchor *ngIf="loggedIn" [routerLink]="['/login']">Logout</button>
+      <div *ngIf="loggedIn">
+        <button md-menu-item md-anchor [routerLink]="['/profile',loggedInUser.id]">Profile</button>
+        <button md-menu-item md-anchor [routerLink]="['/changepwd']">Change Password</button>
+        <button md-menu-item (click)="logout()">Logout</button>
+      </div>
     </md-menu>
     <alert></alert>
     <router-outlet></router-outlet>

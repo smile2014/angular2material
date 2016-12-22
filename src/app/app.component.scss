@@ -1,3 +1,25 @@
 md-sidenav{
     max-width: 15em;
 }
+
+.toolbar-container{
+    width: inherit;
+    display: flex;           /* establish flex container */
+    display: -webkit-flex;   /* establish flex container safari*/
+    flex-direction: row;    /* make main axis vertical */
+    -webkit-flex-direction: row; /* make main axis vertical safari */
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-align-items: center;
+    align-items: center;
+    .left {
+        width:40%;
+        -webkit-align-self: flex-start;
+        align-self: flex-start;
+    }
+    .right {
+        width: 60%;
+        margin-left: auto;
+        cursor: pointer;
+    }
+}

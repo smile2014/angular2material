@@ -29,7 +29,12 @@ import { LinkComponent } from './link';
 import { FeeComponent } from './fee';
 import { LibraryComponent } from './library';
 import { ComplainComponent } from './complain';
-import { SidemenuComponent } from './sidemenu/sidemenu.component';
+import { SidemenuComponent } from './sidemenu';
+import { HomeComponent } from './home';
+import { EnrollmentComponent } from './enrollment';
+import { ImportComponent } from './import';
+import { SelectionComponent } from './selection';
+import { RejectionComponent } from './rejection';
 
 @NgModule({
   declarations: [
@@ -56,6 +61,11 @@ import { SidemenuComponent } from './sidemenu/sidemenu.component';
     LibraryComponent,
     ComplainComponent,
     SidemenuComponent,
+    HomeComponent,
+    EnrollmentComponent,
+    ImportComponent,
+    SelectionComponent,
+    RejectionComponent,
   ],
   entryComponents: [
     AppComponent,

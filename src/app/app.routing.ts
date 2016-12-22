@@ -20,9 +20,15 @@ import { LinkComponent } from './link';
 import { FeeComponent } from './fee';
 import { LibraryComponent } from './library';
 import { ComplainComponent } from './complain';
+import { HomeComponent } from './home';
+import { EnrollmentComponent } from './enrollment';
+import { ImportComponent } from './import';
+import { SelectionComponent } from './selection';
+import { RejectionComponent } from './rejection';
+
 
 const appRoutes: Routes = [
-    { path: '', component: DashboardComponent, canActivate: [AuthGuard] },
+    { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
     { path: 'attendance', component: AttendanceComponent, canActivate: [AuthGuard] },
     { path: 'student', component: StudentComponent, canActivate: [AuthGuard] },
     { path: 'timetable', component: TimetableComponent, canActivate: [AuthGuard] },
@@ -38,8 +44,13 @@ const appRoutes: Routes = [
     { path: 'profile/:id', component: ProfileComponent, canActivate: [AuthGuard] },
     { path: 'admission', component: AdmissionComponent, canActivate: [AuthGuard] },
     { path: 'changepwd', component: ChangepwdComponent, canActivate: [AuthGuard] },
+    { path: 'enrollment', component: EnrollmentComponent, canActivate: [AuthGuard] },
+    { path: 'import', component: ImportComponent, canActivate: [AuthGuard] },
+    { path: 'selection', component: SelectionComponent, canActivate: [AuthGuard] },
+    { path: 'rejection', component: RejectionComponent, canActivate: [AuthGuard] },
+    { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
+    { path: '', component: HomeComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent },
     { path: 'forgotpwd', component: ForgotpwdComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

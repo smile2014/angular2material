@@ -1,5 +1,5 @@
-.container{
-    width: 13em;
+.menu-container{
+    width: inherit;
     margin: 0.5em;
     display: flex;           /* establish flex container */
     display: -webkit-flex;   /* establish flex container safari*/
@@ -20,5 +20,33 @@
     -webkit-flex-direction: row; /* make main axis vertical safari */
     -webkit-justify-content: flex-start;
    justify-content: flex-start;
+   -webkit-align-items: center;
+    align-items: center;
+    .left {
+   -webkit-align-self: flex-start;
+   align-self: flex-start;
+}
+
+.right {
+   margin-left: auto;
+   cursor: pointer;
+}
+}
+
+.submenu-container{
+    width: inherit;
+    margin-left: 2em;
+    display: flex;           /* establish flex container */
+    display: -webkit-flex;   /* establish flex container safari*/
+    flex-direction: column;  /* make main axis vertical */
+    -webkit-flex-direction: column; /* make main axis vertical safari */
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+
+a{
+    md-icon{
+        padding-right: 1em;
+    }
 }
 

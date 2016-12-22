@@ -1,18 +1,18 @@
-<div class="container">
+<div class="menu-container">
   <div *ngFor="let item of sideMenuItems; let i = index" class="box">
     <div class="sub-container">
-      <div>
+      <div class="left">
         <a md-list-item [routerLink]="[item.route]">
           <md-icon role="img" aria-label="{{item.image}}">{{item.image}}</md-icon>
           <span>{{item.name}}</span>
         </a>
       </div>
-      <div *ngIf="item.isSubmenu">
+      <div *ngIf="item.subMenu" class="right">
         <md-icon *ngIf="item.isSubmenu" (click)="toggleAdd(i,false)">expand_more</md-icon>
         <md-icon *ngIf="!item.isSubmenu" (click)="toggleAdd(i,true)">expand_less</md-icon>
       </div>
     </div>
-    <div *ngIf="item.isSubmenu">
+    <div class="submenu-container" *ngIf="!item.isSubmenu">
       <div *ngFor="let subItem of item.subMenu">
         <a md-list-item [routerLink]="[subItem.route]">
           <md-icon role="img" aria-label="{{subItem.image}}">{{subItem.image}}</md-icon>

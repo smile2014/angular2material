@@ -4,15 +4,16 @@ const SubsidenavData: Array<SideMenu> = [
     {
         id: 1,
         name: "Enrollment",
-        route: "/dashboard",
+        route: "/enrollment",
         roleId: 1,
         isSubmenu: false,
         parentId: 2,
+        image: "list"
     },
     {
         id: 2,
         name: "Import",
-        route: "/dashboard",
+        route: "/import",
         roleId: 1,
         isSubmenu: false,
         parentId: 2,
@@ -21,7 +22,7 @@ const SubsidenavData: Array<SideMenu> = [
     {
         id: 3,
         name: "Selection",
-        route: "/dashboard",
+        route: "/selection",
         roleId: 1,
         isSubmenu: false,
         parentId: 2,
@@ -30,7 +31,7 @@ const SubsidenavData: Array<SideMenu> = [
     {
         id: 4,
         name: "Rejection",
-        route: "/dashboard",
+        route: "/rejection",
         roleId: 1,
         isSubmenu: false,
         parentId: 2,
@@ -116,7 +117,8 @@ export const SidenavData: Array<SideMenu> = [
         route: "/attendance",
         roleId: 1,
         isSubmenu: false,
-        parentId: null
+        parentId: null,
+        image: "edit"
     },
     {
         id: 5,
@@ -133,7 +135,8 @@ export const SidenavData: Array<SideMenu> = [
         route: "/examination",
         roleId: 1,
         isSubmenu: false,
-        parentId: null
+        parentId: null,
+        image: "assessment"
     },
     {
         id: 7,
@@ -141,7 +144,8 @@ export const SidenavData: Array<SideMenu> = [
         route: "/finance",
         roleId: 1,
         isSubmenu: false,
-        parentId: null
+        parentId: null,
+        image: "account_balance"
     },
     {
         id: 8,
@@ -185,7 +189,8 @@ export const SidenavData: Array<SideMenu> = [
         route: "/fee",
         roleId: 1,
         isSubmenu: false,
-        parentId: null
+        parentId: null,
+        image: "attach_money"
     },
     {
         id: 13,
