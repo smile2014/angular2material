@@ -10,13 +10,14 @@
         <span>School Management</span>
       </div>
       <div class="right">
-        <button md-button md-anchor *ngIf="!loggedIn" [routerLink]="['/login']">Sign in</button>
+        <button md-icon-button md-anchor *ngIf="!loggedIn" [routerLink]="['/login']">
+        <fa [name]="'sign-in'" [size]=1></fa></button>
         <button md-icon-button [md-menu-trigger-for]="menu" *ngIf="loggedIn">
           <!--<md-icon>account_circle</md-icon>-->
-          <fa [name]="'rocket'" [inverse]=true></fa>
+          <fa [name]="'rocket'" [size]=1></fa>
         </button>
         <button md-icon-button (click)="logout()" *ngIf="loggedIn">
-          <md-icon>input</md-icon>
+          <fa [name]="'sign-out'" [size]=1></fa>
         </button>
       </div>
     </div>
