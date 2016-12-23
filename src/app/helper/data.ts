@@ -1,6 +1,6 @@
 import { User, SideMenu } from "../model";
 
-const SubsidenavData: Array<SideMenu> = [
+const AdmissionSubData: Array<SideMenu> = [
     {
         id: 1,
         name: "Enrollment",
@@ -39,6 +39,108 @@ const SubsidenavData: Array<SideMenu> = [
     }
 ];
 
+const StudentSubData: Array<SideMenu> = [
+    {
+        id: 1,
+        name: "Details",
+        route: "/enrollment",
+        roleId: 1,
+        isSubmenu: false,
+        parentId: 3,
+        image: "list"
+    },
+    {
+        id: 2,
+        name: "Id Card",
+        route: "/import",
+        roleId: 1,
+        isSubmenu: false,
+        parentId: 3,
+        image: "file_upload"
+    }
+];
+
+const AttendanceSubData: Array<SideMenu> = [
+    {
+        id: 1,
+        name: "Student",
+        route: "/enrollment",
+        roleId: 1,
+        isSubmenu: false,
+        parentId: 4,
+        image: "list"
+    },
+    {
+        id: 2,
+        name: "Staff",
+        route: "/import",
+        roleId: 1,
+        isSubmenu: false,
+        parentId: 4,
+        image: "file_upload"
+    }
+];
+
+const TimetableSubData: Array<SideMenu> = [
+    {
+        id: 1,
+        name: "Create",
+        route: "/enrollment",
+        roleId: 1,
+        isSubmenu: false,
+        parentId: 5,
+        image: "list"
+    },
+    {
+        id: 2,
+        name: "View",
+        route: "/import",
+        roleId: 1,
+        isSubmenu: false,
+        parentId: 5,
+        image: "file_upload"
+    }
+];
+
+const ExaminationSubData: Array<SideMenu> = [
+    {
+        id: 1,
+        name: "Attendance",
+        route: "/enrollment",
+        roleId: 1,
+        isSubmenu: false,
+        parentId: 6,
+        image: "list"
+    },
+    {
+        id: 2,
+        name: "Assign Marks",
+        route: "/import",
+        roleId: 1,
+        isSubmenu: false,
+        parentId: 6,
+        image: "file_upload"
+    },
+    {
+        id: 2,
+        name: "Results",
+        route: "/import",
+        roleId: 1,
+        isSubmenu: false,
+        parentId: 6,
+        image: "file_upload"
+    },
+    {
+        id: 2,
+        name: "Promote Student",
+        route: "/import",
+        roleId: 1,
+        isSubmenu: false,
+        parentId: 6,
+        image: "file_upload"
+    }
+];
+
 export const UserData: Array<User> = [
     {
         id: 1,
@@ -47,6 +149,7 @@ export const UserData: Array<User> = [
         firstName: "Krishna",
         middleName: "Pratap",
         lastName: "Singh",
+        imageUrl: "assets/img.jpg",
         email: "kp@abc.com",
         roleId: 1
     },
@@ -57,6 +160,7 @@ export const UserData: Array<User> = [
         firstName: "Krishna",
         middleName: "Pratap",
         lastName: "Singh",
+        imageUrl: "assets/img.jpg",
         email: "kp@def.com",
         roleId: 2
     },
@@ -67,6 +171,7 @@ export const UserData: Array<User> = [
         firstName: "Krishna",
         middleName: "Pratap",
         lastName: "Singh",
+        imageUrl: "assets/img.jpg",
         email: "kp@ghi.com",
         roleId: 3
     },
@@ -77,6 +182,7 @@ export const UserData: Array<User> = [
         firstName: "Krishna",
         middleName: "Pratap",
         lastName: "Singh",
+        imageUrl: "assets/img.jpg",
         email: "kp@jkl.com",
         roleId: 4
     }
@@ -99,7 +205,7 @@ export const SidenavData: Array<SideMenu> = [
         roleId: 1,
         parentId: null,
         isSubmenu: true,
-        subMenu: SubsidenavData,
+        subMenu: AdmissionSubData,
         image: "assignment"
     },
     {
@@ -107,8 +213,9 @@ export const SidenavData: Array<SideMenu> = [
         name: "Student",
         route: "/student",
         roleId: 1,
-        isSubmenu: false,
+        isSubmenu: true,
         parentId: null,
+        subMenu: StudentSubData,
         image: "person"
     },
     {
@@ -116,7 +223,8 @@ export const SidenavData: Array<SideMenu> = [
         name: "Attendance",
         route: "/attendance",
         roleId: 1,
-        isSubmenu: false,
+        isSubmenu: true,
+        subMenu: AttendanceSubData,
         parentId: null,
         image: "edit"
     },
@@ -125,7 +233,8 @@ export const SidenavData: Array<SideMenu> = [
         name: "Timetable",
         route: "/timetable",
         roleId: 1,
-        isSubmenu: false,
+        isSubmenu: true,
+        subMenu: TimetableSubData,
         parentId: null,
         image: "date_range"
     },
@@ -134,7 +243,8 @@ export const SidenavData: Array<SideMenu> = [
         name: "Examination",
         route: "/examination",
         roleId: 1,
-        isSubmenu: false,
+        isSubmenu: true,
+        subMenu: ExaminationSubData,
         parentId: null,
         image: "assessment"
     },
@@ -178,7 +288,7 @@ export const SidenavData: Array<SideMenu> = [
         id: 11,
         name: "Links",
         route: "/link",
-        roleId: 1,
+        roleId: 2,
         isSubmenu: false,
         parentId: null,
         image: "link"
@@ -187,7 +297,7 @@ export const SidenavData: Array<SideMenu> = [
         id: 12,
         name: "Fee",
         route: "/fee",
-        roleId: 1,
+        roleId: 3,
         isSubmenu: false,
         parentId: null,
         image: "attach_money"
@@ -196,7 +306,7 @@ export const SidenavData: Array<SideMenu> = [
         id: 13,
         name: "Library",
         route: "/library",
-        roleId: 1,
+        roleId: 4,
         isSubmenu: false,
         parentId: null,
         image: "library_books"
@@ -205,7 +315,7 @@ export const SidenavData: Array<SideMenu> = [
         id: 14,
         name: "Complaints",
         route: "/complain",
-        roleId: 1,
+        roleId: 3,
         isSubmenu: false,
         parentId: null,
         image: "report_problem"

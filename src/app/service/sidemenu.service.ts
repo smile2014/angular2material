@@ -20,9 +20,9 @@ export class SidemenuService {
         return this.http.get('/api/sidemenu', this.authService.jwt()).map((response: Response) => response.json());
     }
 
-    getSidemenuByRole() {
-        let currentUser: User = JSON.parse(localStorage.getItem('currentUser'));
-        return this.http.get('/api/sidemenu/' + currentUser.roleId, this.authService.jwt()).map((response: Response) => response.json());
+    getSidemenuByRole(roleId: number) {
+        // let currentUser: User = JSON.parse(localStorage.getItem('currentUser'));
+        return this.http.get('/api/sidemenu/' + roleId, this.authService.jwt()).map((response: Response) => response.json());
     }
     // private helper methods
 

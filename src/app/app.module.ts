@@ -36,6 +36,7 @@ import { EnrollmentComponent } from './enrollment';
 import { ImportComponent } from './import';
 import { SelectionComponent } from './selection';
 import { RejectionComponent } from './rejection';
+import { SafePipe } from './helper/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { RejectionComponent } from './rejection';
     ImportComponent,
     SelectionComponent,
     RejectionComponent,
+    SafePipe,
   ],
   entryComponents: [
     AppComponent,

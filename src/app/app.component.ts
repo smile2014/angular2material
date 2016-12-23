@@ -47,7 +47,15 @@ export class AppComponent implements OnInit {
 
   logout() {
     this.authenticationService.logout();
+    this.router.navigate(['/home']);
+  }
+
+  login() {
     this.router.navigate(['/login']);
+  }
+
+  profile() {
+    this.router.navigate(['/profile', this.loggedInUser.id]);
   }
 
   // openSettingDialog() {

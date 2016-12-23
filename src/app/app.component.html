@@ -10,12 +10,12 @@
         <span>School Management</span>
       </div>
       <div class="right">
-        <button md-icon-button md-anchor *ngIf="!loggedIn" [routerLink]="['/login']">
-        <fa [name]="'sign-in'" [size]=1></fa></button>
-        <button md-icon-button [md-menu-trigger-for]="menu" *ngIf="loggedIn">
-          <!--<md-icon>account_circle</md-icon>-->
-          <fa [name]="'rocket'" [size]=1></fa>
+        <button md-icon-button *ngIf="!loggedIn" (click)="login()">
+          <fa [name]="'sign-in'" [size]=1></fa>
         </button>
+        <!--<button md-icon-button [md-menu-trigger-for]="menu" *ngIf="loggedIn">
+          <fa [name]="'rocket'" [size]=1></fa>
+        </button>-->
         <button md-icon-button (click)="logout()" *ngIf="loggedIn">
           <fa [name]="'sign-out'" [size]=1></fa>
         </button>
@@ -25,22 +25,30 @@
   <md-sidenav-layout class="left-navigation">
     <md-sidenav #sidenav>
       <!--<md-sidenav #sidenav mode="side" opened="true">-->
+      <div *ngIf="loggedInUser">
+        <md-card>
+          <md-card-title-group>
+            <div (click)="profile()">
+              <img md-card-sm-image md-card-avatar [src]="loggedInUser.imageUrl">
+            </div>
+            <md-card-title>{{loggedInUser.firstName}} {{loggedInUser.lastName}} {{loggedInUser.lastName}}</md-card-title>
+            <md-card-subtitle>{{loggedInUser.email}}</md-card-subtitle>
+          </md-card-title-group>
+        </md-card>
+      </div>
       <md-nav-list>
         <app-sidemenu *ngIf="loggedIn"></app-sidemenu>
-        <a md-list-item (click)="isDarkTheme=!isDarkTheme">
+        <!--<a md-list-item (click)="isDarkTheme=!isDarkTheme">
           <span>Toggle theme</span>
-        </a>
-        <!--<a md-list-item (click)="openSettingDialog()">
-            <span>Settings</span>
-          </a>-->
+        </a>-->
       </md-nav-list>
     </md-sidenav>
-    <md-menu x-position="before" #menu>
+    <!--<md-menu x-position="before" #menu>
       <div *ngIf="loggedIn">
         <button md-menu-item md-anchor [routerLink]="['/profile',loggedInUser.id]">Profile</button>
         <button md-menu-item md-anchor [routerLink]="['/changepwd']">Change Password</button>
       </div>
-    </md-menu>
+    </md-menu>-->
     <alert></alert>
     <router-outlet></router-outlet>
   </md-sidenav-layout>
